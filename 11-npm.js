@@ -1,17 +1,22 @@
-const http = require('http');
+// npm - global command,comes with node
+// npm --version
 
-const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    res.end('Welcome to our home page');
-    //   res.write('Welcome to our home page');
-    //   res.end();
-  }
-  if (req.url === '/about') {
-    res.end('About page');
-  }
-  res.end(
-    `<h1>Opps!</h1><p>Wr can't seem to find the page you are looking for</p><a href="/">back home</a>`
-  );
-});
+// local dependency - use it only in this particular project
+// npm i <packageName>
 
-server.listen(5000);
+// global dependency - use it in any project
+// npm install -g <packageName>
+
+// npm i nodemon -D    (-Development dependency)
+// nodemon restarts the app
+// npm uninstall <packageName>
+
+// package.json - manifes file(stores important info about project/package)
+// manual approach (creates package.json in the root,create properties etc)
+// npm init (step by step,press enter to skip)
+// npm init -y (everythink default)
+
+const _ = require('lodash');
+const items = [1, [2, [3, [4]]]];
+const newItems = _.flattenDeep(items);
+console.log(newItems);
